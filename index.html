@@ -2,11 +2,24 @@
 <html lang="cz">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css" s/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minočist</title>
+    <title>Minosmet</title> 
+    <script src="main.js" defer></script>
 </head>
 <body>
-    <h1>Minočist</h1>
-    <div id="main"></div>
+    <div class="menu">
+        <h1>Bombohled</h1>
+        <p id="oznamovac"></p>
+        <div class="buttons">
+            <button id="tajne" onclick="tajne()">Tajná obtížnost</button>
+            <button onclick="lehke()">Lehké</button>
+            <button onclick="stredni()">Střední</button>
+            <button onclick="tezke()">Těžké</button>
+        </div>
+    </div>
+    <div class="centerKontejner">
+        <table id="pole" oncontextmenu="return false;"></table>
+    </div>
 </body>
 </html>

@@ -1,0 +1,118 @@
+:root {
+    --pozadi: #ffffff;
+    --tablePozadi: #ffffff;
+    --text: #000000;
+    --textSekundarni: #fff;
+    --border: #000;
+    --nula: #eeff33;
+    --vlajecka: #0000ff;
+    --bomba: #ff0000;
+    --barvaCisla: #000;
+}
+
+body {
+    font-family: "Lucida Console", "Courier New", monospace;
+    color: var(--text);
+    background-color: var(--pozadi);
+}
+
+.menu {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.centerKontejner {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1, .tlacitka {
+    display: inline-flex;
+}
+
+#oznamovac {
+    font-size: large;
+    font-weight: bold;
+    position: absolute;
+    width: 30%;
+    left: 35%;
+    right: 35%;
+    text-align: center;
+}
+
+h1 {
+    justify-content: flex-start;
+    text-decoration: underline;
+}
+
+.tlacitka {
+    justify-content:flex-end;
+}
+
+button {
+    margin-right: 5px;
+    margin-left: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+table {
+    border-spacing: 0px;
+    border-left: 1px solid var(--border);
+    border-top: 1px solid var(--border);
+    background-color: var(--tablePozadi);
+}
+
+td {
+    text-align: center;
+    padding: 0;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    cursor: default;
+}
+
+#tajne {
+    background-color: transparent;
+    color: transparent;
+    border: none;
+}
+
+/* nastavení různých druhů políček */
+.nula {
+    background-color: var(--nula);
+}
+.vlajecka {
+    background-color: var(--vlajecka);
+}
+
+.bomba {
+    background-color: var(--bomba);
+}
+
+/* nastavení velikostí políček */
+.lehke {
+    width: 80px;
+    height: 80px;
+    font-size: 40px;
+}
+.stredni {
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+}
+.tezke {
+    width: 20px;
+    height: 20px;
+    font-size: 15px;
+}
+.tajne {
+    width: 10px;
+    height: 10px;
+    font-size: 8px;
+}
