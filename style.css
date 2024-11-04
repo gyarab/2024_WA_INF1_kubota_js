@@ -2,12 +2,10 @@
     --pozadi: #ffffff;
     --tablePozadi: #ffffff;
     --text: #000000;
-    --textSekundarni: #fff;
     --border: #000;
     --nula: #eeff33;
     --vlajecka: #0000ff;
     --bomba: #ff0000;
-    --barvaCisla: #000;
 }
 
 body {
@@ -60,6 +58,13 @@ button {
     margin-left: 0px;
     padding-top: 10px;
     padding-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: 2px solid var(--text);
+    border-radius: 10px;
+    color: var(--text);
+    font-size: 12px;
+    background-color: transparent;
 }
 
 table {

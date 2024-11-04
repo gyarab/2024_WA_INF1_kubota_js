@@ -92,7 +92,7 @@ function generacePole(velikostPole) {
 function odkrytPolicko(x, y) {
     const td = policka[x][y];
 
-    if(!(td.classList.contains("vlajecka"))) {
+    if(!(td.classList.contains("vlajecka") || (document.documentElement.style.getPropertyValue("--tablePozadi") == "#ff8800"))) {
         td.setAttribute("jeOdkryto", true);
         policka[x][y].classList.add("odkryto");
 
