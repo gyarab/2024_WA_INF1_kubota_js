@@ -24,6 +24,7 @@ function generacePole(velikostPole) {
     document.getElementById("pole").innerHTML=("");
     policka = [];
     document.documentElement.style.setProperty("--tablePozadi", "#fff");
+    document.documentElement.style.setProperty("--pozadi", "#fff");
     document.documentElement.style.setProperty("--tableSekundarniPozadi", "#bbb");
 
     if(!(velikostPole == 64)) {
@@ -94,8 +95,6 @@ function odkrytPolicko(x, y) {
 
     if(!(td.classList.contains("vlajecka") || (document.documentElement.style.getPropertyValue("--tablePozadi") == "#ff8800"))) {
         td.setAttribute("jeOdkryto", true);
-        policka[x][y].classList.add("odkryto");
-
         //odkryje i sousední políčka s 0 bombsedama
         if (zjistitPocetBombsedu(x, y) === 0) {
             for(var dx = -1; dx <= 1; dx++) {
@@ -121,9 +120,10 @@ function odkrytPolicko(x, y) {
         //zobrazí počet bombsedů pro hráče pokud není 0
         if(zjistitPocetBombsedu(x, y) !== 0) {
             td.innerHTML = zjistitPocetBombsedu(x, y);
+            td.classList.add("odkryto");
         } else {
             td.classList.add("nula");
-        }   
+        }
     }    
 }
 
@@ -167,15 +167,17 @@ function zkouskaVyhry(velikostPole) {
 //nastaví styl pro výhru
 function vyhraEfekt(velikostPole) {
     resetTrid(velikostPole);
-    document.documentElement.style.setProperty("--tablePozadi", "#00ff00");
-    document.getElementById("oznamovac").innerText = "VÍTĚZSTVÍ! Jste skvělím bombohledem!";
+    document.documentElement.style.setProperty("--pozadi", "#abffab");
+    document.documentElement.style.setProperty("--tablePozadi", "#abffab");
+    document.getElementById("oznamovac").innerText = "VÍTĚZSTVÍ! Jste skvělím minohledem!";
     odhalitBomby(velikostPole);
 }
 
 //nastaví styl pro prohru
 function prohraEfekt(velikostPole) {
     resetTrid(velikostPole);
-    document.documentElement.style.setProperty("--tablePozadi", "#ff8800");
+    document.documentElement.style.setProperty("--tablePozadi", "#ffabab");
+    document.documentElement.style.setProperty("--pozadi", "#ffabab");
     odhalitBomby(velikostPole);
     odhalitPole(velikostPole);
 
@@ -194,6 +196,7 @@ function prohraEfekt(velikostPole) {
 function resetTrid(velikostPole) {
     for(let x = 0; x < velikostPole; x++) {
         for(let y = 0; y < velikostPole; y++) {
+            policka[x][y].classList.remove("odkryto");
             policka[x][y].classList.remove("nula");
             policka[x][y].classList.remove("vlajecka");
         }

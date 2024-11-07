@@ -3,9 +3,10 @@
     --tablePozadi: #ffffff;
     --text: #000000;
     --border: #000;
-    --nula: #eeff33;
-    --vlajecka: #0000ff;
-    --bomba: #ff0000;
+    --odkryto: #8f8;
+    --nula: #bbffbb;
+    --vlajecka: #4444ff;
+    --bomba: #ff4444;
 }
 
 body {
@@ -65,6 +66,12 @@ button {
     color: var(--text);
     font-size: 12px;
     background-color: transparent;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+button:hover {
+    color: var(--pozadi);
+    background-color: black;
 }
 
 table {
@@ -92,6 +99,11 @@ td {
 .nula {
     background-color: var(--nula);
 }
+
+.odkryto {
+    background-color: var(--odkryto);
+}
+
 .vlajecka {
     background-color: var(--vlajecka);
 }
