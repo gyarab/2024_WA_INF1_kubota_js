@@ -22,6 +22,7 @@ let policka = [];
 function generacePole(velikostPole) {
     //vyprázdnit a resetovat
     document.getElementById("pole").innerHTML=("");
+    vybuch = false;
     policka = [];
     document.documentElement.style.setProperty("--tablePozadi", "#fff");
     document.documentElement.style.setProperty("--pozadi", "#fff");
@@ -67,7 +68,7 @@ function generacePole(velikostPole) {
             //přidání posluchače na levé kliknutí
             td.addEventListener("click", () => {
                 //tohle je fakt divné a nemám to rád, co je "===" ?!?, musel jsem dost googlit
-                if(td.getAttribute("jeBomba") === "true") {
+                if((td.getAttribute("jeBomba") === "true")  ((document.documentElement.style.getPropertyValue("--pozadi") == "#ffabab") || (document.documentElement.style.getPropertyValue("--pozadi") == "#abffab"))){
                     if(!(td.classList.contains("vlajecka"))) {
                         prohraEfekt(velikostPole);
                     }
@@ -93,7 +94,8 @@ function generacePole(velikostPole) {
 function odkrytPolicko(x, y) {
     const td = policka[x][y];
 
-    if(!(td.classList.contains("vlajecka") || (document.documentElement.style.getPropertyValue("--tablePozadi") == "#ff8800"))) {
+    // jestli je vlaječka nebo jestli je prohráno (zjištěno přes barvu pozadí z nějakého důvodu (důvod je lenost))
+    if(!(td.classList.contains("vlajecka") || (document.documentElement.style.getPropertyValue("--pozadi") == "#ffabab") || (document.documentElement.style.getPropertyValue("--pozadi") == "#abffab"))) {
         td.setAttribute("jeOdkryto", true);
         //odkryje i sousední políčka s 0 bombsedama
         if (zjistitPocetBombsedu(x, y) === 0) {
@@ -168,15 +170,13 @@ function zkouskaVyhry(velikostPole) {
 function vyhraEfekt(velikostPole) {
     resetTrid(velikostPole);
     document.documentElement.style.setProperty("--pozadi", "#abffab");
-    document.documentElement.style.setProperty("--tablePozadi", "#abffab");
-    document.getElementById("oznamovac").innerText = "VÍTĚZSTVÍ! Jste skvělím minohledem!";
+    document.getElementById("oznamovac").innerText = "VÍTĚZSTVÍ! Jste skvělým minohledem!";
     odhalitBomby(velikostPole);
 }
 
 //nastaví styl pro prohru
 function prohraEfekt(velikostPole) {
     resetTrid(velikostPole);
-    document.documentElement.style.setProperty("--tablePozadi", "#ffabab");
     document.documentElement.style.setProperty("--pozadi", "#ffabab");
     odhalitBomby(velikostPole);
     odhalitPole(velikostPole);

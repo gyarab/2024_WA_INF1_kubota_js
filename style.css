@@ -1,6 +1,5 @@
 :root {
     --pozadi: #ffffff;
-    --tablePozadi: #ffffff;
     --text: #000000;
     --border: #000;
     --odkryto: #8f8;
@@ -13,6 +12,11 @@ body {
     font-family: "Lucida Console", "Courier New", monospace;
     color: var(--text);
     background-color: var(--pozadi);
+}
+
+#logo {
+    padding-left: 30px;
+    height: 100px;
 }
 
 .menu {
@@ -78,7 +82,7 @@ table {
     border-spacing: 0px;
     border-left: 1px solid var(--border);
     border-top: 1px solid var(--border);
-    background-color: var(--tablePozadi);
+    background-color: transparent;
 }
 
 td {
