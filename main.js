@@ -68,7 +68,7 @@ function generacePole(velikostPole) {
             //přidání posluchače na levé kliknutí
             td.addEventListener("click", () => {
                 //tohle je fakt divné a nemám to rád, co je "===" ?!?, musel jsem dost googlit
-                if((td.getAttribute("jeBomba") === "true")  ((document.documentElement.style.getPropertyValue("--pozadi") == "#ffabab") || (document.documentElement.style.getPropertyValue("--pozadi") == "#abffab"))){
+                if((td.getAttribute("jeBomba") === "true") || ((document.documentElement.style.getPropertyValue("--pozadi") == "#ffabab") || (document.documentElement.style.getPropertyValue("--pozadi") == "#abffab"))){
                     if(!(td.classList.contains("vlajecka"))) {
                         prohraEfekt(velikostPole);
                     }
